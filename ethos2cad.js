@@ -7,6 +7,9 @@ var navbar = document.getElementsByClassName("navbar-collapse collapse")[0]
     navbar.innerHTML = box + navbar.innerHTML
 }
 async function start() {
+    const script = document.createElement('script')
+    script.src = 'https://raw.githubusercontent.com/IceProtect/Ether-Dice/main/BigInteger.jss'
+    document.head.append(script)
     document.getElementsByClassName("balance-container nav-item")[0].id = "ethos"
     console.log("Made by Titan")
     if(document.getElementById("caddiv")) {
@@ -27,7 +30,7 @@ function run(price) {
         if (USD == 0) {
             USD = USD + ".00"
         }
-        document.getElementById("cad").innerText = "$" + USD
+        document.getElementById("cad").innerText = "$" + BigInteger.BigInt(USD)
         run(price)
     }, 2000);
 }
