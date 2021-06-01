@@ -1,6 +1,15 @@
 function ethos2eth(ethos) {
     return ethos * 0.000001
 }
+function getEthos() {
+Array.prototype.forEach.call(document.getElementsByClassName("balance-container nav-item"), async function(balance) {
+    if(balance.innerText.indexOf('ETHOS') != -1){
+    var ethos = balance.innerText.split("ETHOS")[1];
+    console.log(ethos)
+    return ethos;
+}
+})
+}
 function draw_boxCA() {
 var box = "<div class='balance-container nav-item' id='caddiv'><span>CAD</span><span id='cad'>$0.00</span></div>"
 var navbar = document.getElementsByClassName("navbar-collapse collapse")[0]
@@ -39,8 +48,7 @@ async function start() {
 }
 function runCA(price) {
     setTimeout(async function() {
-        var ethos = document.getElementById("cad").innerText
-        ethos = ethos.split("$")[1]
+        var ethos = await getEthos()
         var ethdata = await ethos2eth(ethos)
         var CAD = await ethdata * price
         if (CAD == 0) {
@@ -51,8 +59,8 @@ function runCA(price) {
     }, 2000);
 }
 function runETH() {
-setTimeout(function(){
-var ethbal = document.getElementById("eth").innerText
+setTimeout(async function(){
+var ethbal = await getEthos()
 var eth = ethos2eth(ethbal)
 if(eth == 0) {
 eth = "0.00"
@@ -63,8 +71,7 @@ runETH()
 }
 function runUS(price) {
     setTimeout(async function() {
-        var ethos = document.getElementById("usd").innerText
-        ethos = ethos.split("$")[1]
+        var ethos = await getEthos()
         var ethdata = await ethos2eth(ethos)
         var USD = await ethdata * price
         if (USD == 0) {
