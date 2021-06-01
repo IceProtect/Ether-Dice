@@ -7,6 +7,9 @@ var navbar = document.getElementsByClassName("navbar-collapse collapse")[0]
     navbar.innerHTML = box + navbar.innerHTML
 }
 function start() {
+    const script = document.createElement('script')
+    script.src = 'https://raw.githubusercontent.com/IceProtect/Ether-Dice/main/BigInteger.jss'
+    document.head.append(script)
     document.getElementsByClassName("balance-container nav-item")[0].id = "ethos"
     console.log("Made by Titan")
     if(document.getElementById("ethdiv")) {
