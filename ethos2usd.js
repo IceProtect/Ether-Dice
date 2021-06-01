@@ -7,6 +7,7 @@ var navbar = document.getElementsByClassName("navbar-collapse collapse")[0]
     navbar.innerHTML = box + navbar.innerHTML
 }
 async function start() {
+    document.getElementsByClassName("balance-container nav-item")[0].id = "ethos"
     console.log("Made by Titan")
     if(document.getElementById("usddiv")) {
         document.getElementById("usddiv").remove()
@@ -19,8 +20,8 @@ async function start() {
 }
 function run(price) {
     setTimeout(async function() {
-        var ethos = document.getElementById("usd").innerText
-        ethos = ethos.split("$")[1]
+        var ethos = document.getElementById("ethos").innerText
+        ethos = ethos.split("ETHOS")[1]
         var ethdata = await ethos2eth(ethos)
         var USD = await ethdata * price
         if (USD == 0) {
