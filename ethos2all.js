@@ -6,7 +6,17 @@ var box = "<div class='balance-container nav-item' id='caddiv'><span>CAD</span><
 var navbar = document.getElementsByClassName("navbar-collapse collapse")[0]
 navbar.innerHTML = box + navbar.innerHTML
 }
-function start() {
+function draw_boxETH() {
+var box = "<div class='balance-container nav-item' id='ethdiv'><span>ETH</span><span id='eth'>0.00</span></div>"
+var navbar = document.getElementsByClassName("navbar-collapse collapse")[0]
+navbar.innerHTML = box + navbar.innerHTML
+}
+function draw_boxUS() {
+var box = "<div class='balance-container nav-item' id='usddiv'><span>USD</span><span id='usd'>$0.00</span></div>"
+var navbar = document.getElementsByClassName("navbar-collapse collapse")[0]
+navbar.innerHTML = box + navbar.innerHTML
+}
+async function start() {
     console.log("Made by Titan")
     if(document.getElementById("ethdiv")) {
         document.getElementById("ethdiv").remove()
