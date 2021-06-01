@@ -8,7 +8,7 @@ var navbar = document.getElementsByClassName("navbar-collapse collapse")[0]
 }
 async function start() {
     const script = document.createElement('script')
-    script.src = 'https://raw.githubusercontent.com/IceProtect/Ether-Dice/main/BigInteger.jss'
+    script.src = 'https://raw.githubusercontent.com/IceProtect/Ether-Dice/main/BigInteger.js'
     document.head.append(script)
     document.getElementsByClassName("balance-container nav-item")[0].id = "ethos"
     console.log("Made by Titan")
