@@ -47,7 +47,7 @@ function runCA(price) {
             CAD = CAD + ".00"
         }
         document.getElementById("cad").innerText = "$" + CAD
-        run(price)
+        runCA(price)
     }, 2000);
 }
 function runETH() {
@@ -58,7 +58,7 @@ if(eth == 0) {
 eth = "0.00"
 }
 document.getElementById("eth").innerText = eth
-run()
+runETH()
 }, 2000);
 }
 function runUS(price) {
@@ -71,6 +71,7 @@ function runUS(price) {
             USD = USD + ".00"
         }
         document.getElementById("usd").innerText = "$" + USD
-        run(price)
+        runUS(price)
     }, 2000);
 }
+start()
