@@ -7,6 +7,7 @@ var navbar = document.getElementsByClassName("navbar-collapse collapse")[0]
     navbar.innerHTML = box + navbar.innerHTML
 }
 function start() {
+    document.getElementsByClassName("balance-container nav-item")[0].id = "ethos"
     console.log("Made by Titan")
     if(document.getElementById("ethdiv")) {
         document.getElementById("ethdiv").remove()
@@ -16,7 +17,7 @@ function start() {
 }
 function run() {
 setTimeout(function(){
-var ethbal = document.getElementById("eth").innerText
+var ethbal = document.getElementById("ethos").innerText.split("ETHOS")[1]
 var eth = ethos2eth(ethbal)
 if(eth == 0) {
 eth = "0.00"
